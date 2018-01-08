@@ -10,7 +10,8 @@ class App < Sinatra::Base
     @common_text = []
     @analyzed_text = TextAnalyzer.new(params[:user_text])
     @analyzed_text.most_used_letter.each do |key, value|
-      @common_text << key, value
+      @common_text << key
+      @common_text << value
     end
 
     erb :results
